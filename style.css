@@ -508,6 +508,28 @@ footer {
     align-items: center;
 }
 
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer-credit {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.footer-credit a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-credit a:hover {
+    color: var(--text-main);
+    text-decoration: underline;
+}
+
 .socials {
     display: flex;
     gap: 20px;
