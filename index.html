@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARBER SHOP | Więcej niż strzyżenie</title>
+    <!-- Google Fonts: Bebas Neue, Roboto Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons (Optional/CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">BARBER<span class="highlight">SHOP</span>.</a>
+            <ul class="nav-links">
+                <li><a href="#about">O nas</a></li>
+                <li><a href="#services">Usługi</a></li>
+                <li><a href="#reviews">Opinie</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">WIĘCEJ NIŻ <span class="highlight-text">STRZYŻENIE</span></h1>
+            <p class="hero-subtitle">Rzemiosło. Pasja. Męski styl.</p>
+            <a href="#contact" class="cta-button">ZAREZERWUJ FOTEL</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section fade-in">
+        <div class="container">
+            <h2 class="section-title">O NAS</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <!-- Placeholder for About Image -->
+                    <div class="img-placeholder"></div>
+                </div>
+                <div class="about-content">
+                    <h3>MĘSKI AZYL</h3>
+                    <p>Jesteśmy czymś więcej niż zwykłym zakładem fryzjerskim. To Twój męski azyl, miejsce, gdzie
+                        tradycyjne rzemiosło spotyka się z nowoczesnym podejściem.</p>
+                    <p>Nasi barberzy to mistrzowie brzytwy i nożyczek, którzy zadbają o Twój wizerunek z najwyższą
+                        precyzją. Surowe wnętrze, dobra kawa i atmosfera, której szukałeś. Tutaj czas zwalnia, a Ty
+                        wychodzisz odmieniony.</p>
+                    <a href="#services" class="text-link">SPRAWDŹ USŁUGI <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats-section">
+        <div class="container stats-grid">
+            <div class="stat-item fade-in">
+                <h3 class="stat-number" data-target="10">0</h3>
+                <p>LAT DOŚWIADCZENIA</p>
+            </div>
+            <div class="stat-item fade-in">
+                <h3 class="stat-number" data-target="1500">0</h3>
+                <p>ZADOWOLONYCH KLIENTÓW</p>
+            </div>
+            <div class="stat-item fade-in">
+                <h3 class="stat-number" data-target="5000">0</h3>
+                <p>WYPITYCH KAW</p>
+            </div>
+            <div class="stat-item fade-in">
+                <h3 class="stat-number" data-target="12">0</h3>
+                <p>NAGRÓD BRANŻOWYCH</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section fade-in">
+        <div class="container">
+            <h2 class="section-title">CENNIK</h2>
+            <div class="services-grid">
+                <!-- Service Cards will be populated here style-wise, but hardcoded for now -->
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>STRZYŻENIE WŁOSÓW</h3>
+                        <p class="service-desc">Konsultacja, mycie, strzyżenie, stylizacja.</p>
+                    </div>
+                    <div class="service-price">100 PLN</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>STRZYŻENIE BRODY</h3>
+                        <p class="service-desc">Modelowanie brzytwą, gorący ręcznik, pielęgnacja.</p>
+                    </div>
+                    <div class="service-price">80 PLN</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>COMBO (WŁOSY + BRODA)</h3>
+                        <p class="service-desc">Pełna usługa dla wymagających. Oszczędzasz czas i pieniądze.</p>
+                    </div>
+                    <div class="service-price">160 PLN</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>ROYAL SHAVE</h3>
+                        <p class="service-desc">Tradycyjne golenie brzytwą na gładko z rytuałem gorących ręczników.</p>
+                    </div>
+                    <div class="service-price">120 PLN</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section reviews-section fade-in">
+        <div class="container">
+            <h2 class="section-title">OPINIE</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Najlepsze miejsce w mieście. Profesjonalne podejście i świetny klimat."</p>
+                    <p class="review-author">- Tomasz K.</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Precyzja w każdym calu. Brodę robią tutaj jak nigdzie indziej. Polecam!"</p>
+                    <p class="review-author">- Michał W.</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Super atmosfera, industrialny wystrój i whiskey w cenie. Wrócę na pewno."
+                    </p>
+                    <p class="review-author">- Adam N.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery-section fade-in">
+        <div class="container">
+            <h2 class="section-title">GALERIA</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"
+                    style="background-image: url('https://images.unsplash.com/photo-1503951914205-98343e77fe9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                </div>
+                <div class="gallery-item"
+                    style="background-image: url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                </div>
+                <div class="gallery-item"
+                    style="background-image: url('https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                </div>
+                <div class="gallery-item"
+                    style="background-image: url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contact" class="section contact-section fade-in">
+        <div class="container">
+            <h2 class="section-title">LOKALIZACJA</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>KONTAKT</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> ul. Przykładowa 12/4, Warszawa</p>
+                    <p><i class="fas fa-phone"></i> +48 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> kontakt@barbershop.pl</p>
+                    <div class="hours">
+                        <h4>GODZINY OTWARCIA</h4>
+                        <p>Pon - Pią: 10:00 - 20:00</p>
+                        <p>Sobota: 09:00 - 16:00</p>
+                        <p>Niedziela: Zamknięte</p>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <!-- Google Maps Iframe Placeholder -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.376826629783!2d21.01222871579624!3d52.23704997976109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2sWarszawa%2C%20Poland!5e0!3m2!1sen!2sus!4v1625686000000!5m2!1sen!2sus"
+                        width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 BARBER SHOP. All Rights Reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
