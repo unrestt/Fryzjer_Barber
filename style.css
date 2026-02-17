@@ -11,6 +11,7 @@
     --font-heading: 'Bebas Neue', sans-serif;
     --font-body: 'Roboto Mono', monospace;
     --transition: all 0.3s ease;
+    --transition-slow: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -59,7 +60,24 @@ ul {
 }
 
 .section {
-    padding: 100px 0;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-text {
+    position: absolute;
+    font-size: 15rem;
+    font-family: var(--font-heading);
+    color: rgba(255, 255, 255, 0.02);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 20px;
 }
 
 .section-title {
@@ -87,9 +105,34 @@ ul {
     color: var(--accent-gold);
 }
 
+/* Top Bar */
+.top-bar {
+    background-color: #0c0c0c;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.top-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-bar-item i {
+    color: var(--accent-gold);
+}
+
 /* Navigation */
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     background-color: rgba(18, 18, 18, 0.95);
@@ -189,6 +232,22 @@ ul {
     overflow: hidden;
 }
 
+.hero-bg-zoom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('hero.png') center/cover no-repeat;
+    z-index: -1;
+    transform: scale(1.1);
+    transition: transform 10s ease-out;
+}
+
+.visible .hero-bg-zoom {
+    transform: scale(1);
+}
+
 /* Optional: Add a subtle texture or noise overlay via CSS if desired, 
    but for "Industrial Minimal" clean dark gradients work well */
 .hero-content {
@@ -201,6 +260,40 @@ ul {
     font-size: 6rem;
     line-height: 1;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.3em;
+    flex-wrap: wrap;
+}
+
+.reveal-text {
+    display: block;
+    overflow: hidden;
+    height: 1.1em;
+    margin-bottom: -0.1em;
+}
+
+.reveal-text span {
+    display: block;
+    transform: translateY(100%);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visible .reveal-text span {
+    transform: translateY(0);
+}
+
+.reveal-text:nth-child(1) span {
+    transition-delay: 0.2s;
+}
+
+.reveal-text:nth-child(2) span {
+    transition-delay: 0.4s;
+}
+
+.reveal-text:nth-child(3) span {
+    transition-delay: 0.6s;
 }
 
 .hero-subtitle {
@@ -486,8 +579,8 @@ ul {
 /* Animation Classes */
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-in.visible {
@@ -545,9 +638,58 @@ footer {
 }
 
 /* Responsive */
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-gold), var(--accent-copper));
+    z-index: 1001;
+    transition: width 0.1s ease;
+}
+
+/* Loading Overlay & Pulse */
+body.loading::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    z-index: 2000;
+    transition: opacity 0.8s ease-out;
+}
+
+body:not(.loading)::before {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (pointer: coarse) {
+    /* Cursor removal styles previously here */
+}
+
 @media (max-width: 768px) {
-    body {
-        overflow-x: hidden;
+    .bg-text {
+        font-size: 8rem;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .top-bar {
+        display: none;
+    }
+
+    .navbar {
+        top: 0;
+        position: fixed;
+        /* Keep fixed for mobile if needed, or stick with sticky */
     }
 
     .nav-links {
@@ -573,12 +715,6 @@ footer {
 
     .burger {
         display: block;
-    }
-
-    /* .navbar .container removed as it was empty */
-
-    .hero-title {
-        font-size: 3.5rem;
     }
 
     .about-grid {

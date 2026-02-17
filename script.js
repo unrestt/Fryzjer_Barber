@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+    // Remove loading class
+    setTimeout(() => {
+        document.body.classList.remove('loading');
+        // Trigger hero animation after a short delay
+        const heroSection = document.querySelector('.hero-section');
+        if (heroSection) {
+            heroSection.classList.add('visible');
+        }
+    }, 500);
 
-    // Optional: Navbar background change on scroll
+    // Navbar background change on scroll
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -19,6 +19,26 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.style.background = 'rgba(18, 18, 18, 0.95)';
             navbar.style.boxShadow = 'none';
         }
+    });
+
+    // Scroll Progress Bar
+    const scrollProgress = document.querySelector('.scroll-progress');
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        if (scrollProgress) {
+            scrollProgress.style.width = scrolled + "%";
+        }
+    });
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
 
     // Mobile Menu Toggle
@@ -61,7 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.fade-in').forEach(el => {
+    document.querySelectorAll('.fade-in, .reveal-text').forEach(el => {
+        // If it's a reveal-text, wrap its content in a span if not already done
+        if (el.classList.contains('reveal-text') && !el.querySelector('span')) {
+            const text = el.textContent;
+            el.innerHTML = `<span>${text}</span>`;
+        }
         observer.observe(el);
     });
 
